@@ -5,9 +5,12 @@ import { gql } from "apollo-server";
  */
 
 export const BlockSchema = gql`
+  scalar Date
   type Block {
     id: ID!
     Hash: String!
+    Height: Int!
+    TimeStamp: Date!
   }
 
   extend type Query {

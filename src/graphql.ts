@@ -9,7 +9,7 @@ import { context } from "./context";
 
 const apolloServer = new ApolloServer({
   typeDefs: schema,
-  resolvers,
+  resolvers: resolvers,
   context: context,
   playground: {
     endpoint: "/graphql"

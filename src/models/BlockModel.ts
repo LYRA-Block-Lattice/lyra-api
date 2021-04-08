@@ -10,6 +10,7 @@ import mongoose from "mongoose";
 export interface IBlock extends mongoose.Document {
   id: string;
   Hash: string;
+  //  Height: Number;
   transform: () => IBlock;
 }
 
@@ -18,6 +19,7 @@ export interface IBlock extends mongoose.Document {
  */
 const schema: mongoose.SchemaDefinition = {
   Hash: { type: mongoose.SchemaTypes.String, required: true, unique: true }
+  //  Height: { type: mongoose.SchemaTypes.Number, required: true, unique: false }
 };
 
 // Block collection name
