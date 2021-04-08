@@ -1,7 +1,5 @@
-import { UserResolver } from "./UserResolver";
 import { BlockResolver } from "./BlockResolver";
 import { dateResolver } from "./dateResolver";
-import { IResolvers } from "graphql-tools";
 import GraphQLJSON from "graphql-type-json";
 
 /**
@@ -40,9 +38,4 @@ const blockTypeResolvers = {
   JSON: GraphQLJSON
 };
 
-export const resolvers = [
-  UserResolver,
-  BlockResolver,
-  dateResolver,
-  blockTypeResolvers
-];
+export const resolvers = [BlockResolver, dateResolver, blockTypeResolvers];
