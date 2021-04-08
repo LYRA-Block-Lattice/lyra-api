@@ -2,6 +2,7 @@ import { UserResolver } from "./UserResolver";
 import { BlockResolver } from "./BlockResolver";
 import { dateResolver } from "./dateResolver";
 import { IResolvers } from "graphql-tools";
+import GraphQLJSON from "graphql-type-json";
 
 /**
  * @description holds all resolvers
@@ -35,7 +36,8 @@ const blockTypeResolvers = {
     PoolWithdraw: 53,
     PoolSwapIn: 54,
     PoolSwapOut: 55
-  }
+  },
+  JSON: GraphQLJSON
 };
 
 export const resolvers = [

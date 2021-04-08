@@ -6,6 +6,7 @@ import { gql } from "apollo-server";
 
 export const BlockSchema = gql`
   scalar Date
+  scalar JSON
   enum BlockTypes {
     Null
     Service
@@ -41,6 +42,9 @@ export const BlockSchema = gql`
     TimeStamp: Date!
     Version: Int!
     BlockType: BlockTypes!
+    PreviousHash: String
+    ServiceHash: String
+    Tags: JSON
   }
 
   extend type Query {
