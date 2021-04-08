@@ -47,6 +47,21 @@ export const BlockSchema = gql`
     Tags: JSON
   }
 
+  # // ConsolidationBlock
+  extend type Block {
+    blockHashes: JSON
+    MerkelTreeHash: String
+    totalBlockCount: Int
+    totalFees: Int
+    createdBy: String
+  }
+
+  # // TokenGenesisBlock
+  extend type Block {
+    Ticker: String
+    DomainName: String
+  }
+
   extend type Query {
     Blocks: [Block]
     Block(Hash: String!): Block
