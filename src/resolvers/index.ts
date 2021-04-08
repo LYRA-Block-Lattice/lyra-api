@@ -2,7 +2,6 @@ import { UserResolver } from "./UserResolver";
 import { BlockResolver } from "./BlockResolver";
 import { dateResolver } from "./dateResolver";
 import { IResolvers } from "graphql-tools";
-import BlockTypeEnum from "./BlockTypes";
 
 /**
  * @description holds all resolvers
