@@ -1,9 +1,9 @@
 import { UserSchema } from "./UserSchema";
-import { BookSchema } from "./BookSchema";
+import { BlockSchema } from "./BlockSchema";
 import { DefaultSchema } from "./DefaultSchema";
 
 /**
  * @description holds all schemas
  */
 
-export const schema = [ DefaultSchema, UserSchema, BookSchema ];
+export const schema = [DefaultSchema, UserSchema, BlockSchema];
