@@ -7,11 +7,11 @@ import { gql } from "apollo-server";
 export const BlockSchema = gql`
   type Block {
     id: ID!
-    Version: Number!
+    Hash: String!
   }
 
   extend type Query {
     Blocks: [Block]
-    Block(id: String!): Block
+    Block(Hash: String!): Block
   }
 `;

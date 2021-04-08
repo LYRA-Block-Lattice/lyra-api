@@ -1,8 +1,8 @@
-import { UserResolver } from './UserResolver';
-import { BookResolver } from './BookResolver';
+import { UserResolver } from "./UserResolver";
+import { BlockResolver } from "./BlockResolver";
 
 /**
  * @description holds all resolvers
  */
 
-export const resolvers = [UserResolver, BookResolver];
+export const resolvers = [UserResolver, BlockResolver];
