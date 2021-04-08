@@ -7,33 +7,6 @@ import { gql } from "apollo-server";
 export const BlockSchema = gql`
   scalar Date
   scalar JSON
-  enum BlockTypes {
-    Null
-    Service
-    Consolidation
-    Sync
-    LyraTokenGenesis
-    OpenAccountWithReceiveTransfer
-    OpenAccountWithReceiveFee
-    OpenAccountWithImport
-    TokenGenesis
-    SendTransfer
-    ReceiveTransfer
-    ReceiveFee
-    ImportAccount
-    ReceiveMultipleFee
-    ReceiveAuthorizerFee
-    TradeOrder
-    Trade
-    ExecuteTradeOrder
-    CancelTradeOrder
-    PoolFactory
-    PoolGenesis
-    PoolDeposit
-    PoolWithdraw
-    PoolSwapIn
-    PoolSwapOut
-  }
 
   type Block {
     id: ID!
@@ -47,17 +20,14 @@ export const BlockSchema = gql`
     Tags: JSON
   }
 
-  # // ConsolidationBlock
   extend type Block {
+    # // ConsolidationBlock
     blockHashes: JSON
     MerkelTreeHash: String
     totalBlockCount: Int
     totalFees: Int
     createdBy: String
-  }
-
-  # // TokenGenesisBlock
-  extend type Block {
+    # // TokenGenesisBlock
     Ticker: String
     DomainName: String
   }
