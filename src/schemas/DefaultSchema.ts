@@ -4,7 +4,7 @@ import { gql } from "apollo-server";
  * @description holds default schema
  */
 
-export const DefaultSchema = gql`
+export const DefaultSchema = `
   type Query {
     _empty: String
   }
@@ -12,4 +12,4 @@ export const DefaultSchema = gql`
   type Mutation {
     _empty: String
   }
-`
+`;

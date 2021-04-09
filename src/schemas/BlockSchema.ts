@@ -1,8 +1,7 @@
-import { gql } from "apollo-server";
-
 /**
  * @description holds Block schema
  */
+const gql = (s) => `${s}`;
 
 export const BlockSchema = gql`
   scalar Date
@@ -20,20 +19,19 @@ export const BlockSchema = gql`
     Tags: JSON
   }
 
-  extend type Block {
-    # // ConsolidationBlock
-    blockHashes: JSON
-    MerkelTreeHash: String
-    totalBlockCount: Int
-    totalFees: Int
-    createdBy: String
-    # // TokenGenesisBlock
-    Ticker: String
-    DomainName: String
-  }
-
   extend type Query {
     Blocks: [Block]
     Block(Hash: String!): Block
   }
 `;
+// extend type Block {
+//   # // ConsolidationBlock
+//   blockHashes: JSON
+//   MerkelTreeHash: String
+//   totalBlockCount: Int
+//   totalFees: Int
+//   createdBy: String
+//   # // TokenGenesisBlock
+//   Ticker: String
+//   DomainName: String
+// }

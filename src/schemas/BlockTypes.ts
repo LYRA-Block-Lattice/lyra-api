@@ -5,7 +5,7 @@ import { GraphQLJSON } from "graphql-type-json";
  * @description holds Block Types Enum
  */
 
-export const BlockTypes = gql`
+export const BlockTypes = `
   enum BlockTypes {
     Null
     Service
