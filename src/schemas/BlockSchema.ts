@@ -19,18 +19,20 @@ export const BlockSchema = gql`
     Tags: JSON
   }
 
+  type ConsolidationBlock inherits Block {
+    blockHashes: JSON
+    MerkelTreeHash: String
+    totalBlockCount: Int
+    totalFees: Int
+    createdBy: String
+  }
+
   extend type Query {
     Blocks: [Block]
     Block(Hash: String!): Block
   }
 `;
-// extend type Block {
-//   # // ConsolidationBlock
-//   blockHashes: JSON
-//   MerkelTreeHash: String
-//   totalBlockCount: Int
-//   totalFees: Int
-//   createdBy: String
+
 //   # // TokenGenesisBlock
 //   Ticker: String
 //   DomainName: String

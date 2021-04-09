@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 /**
  * @description holds Block model
@@ -10,7 +10,8 @@ import mongoose from "mongoose";
 export interface IBlock extends mongoose.Document {
   id: string;
   Hash: string;
-  //  Height: Number;
+  BlockType: Number;
+  Height: Number;
   transform: () => IBlock;
 }
 
@@ -25,7 +26,15 @@ const schema: mongoose.SchemaDefinition = {
 // Block collection name
 const collectionName: string = "devnet_blocks";
 
-const BlockSchema: mongoose.Schema = new mongoose.Schema(schema);
+const blockSchema = new mongoose.Schema(
+  { schema },
+  { discriminatorKey: "BlockType" }
+);
+
+//TODO: https://github.com/graphql-compose/graphql-compose-mongoose
+const BlockSchema: mongoose.Schema = blockSchema;
+
+//const ConsolidationBlock = blockSchema.discriminator(12, new Schema({}));
 
 /**
  * transforms Block object,

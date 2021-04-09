@@ -11,5 +11,5 @@ const jsonResolver = {
   JSON: GraphQLJSON
 };
 
-export const schema = DefaultSchema + BlockTypes + BlockSchema;
+export const schema = [DefaultSchema, BlockTypes, BlockSchema].join("");
 export const enumResolvers = [jsonResolver, blockTypeResolvers];

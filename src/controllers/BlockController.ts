@@ -18,7 +18,8 @@ export const getAllBlocks = async (connection) => {
     list = await BlockModel(connection).find();
     if (list != null && list.length > 0) {
       list = list.map((u) => {
-        return u.transform();
+        var x = u.transform();
+        return x;
       });
     }
   } catch (error) {
